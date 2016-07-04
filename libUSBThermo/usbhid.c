@@ -258,6 +258,7 @@ HidDevice *HidOpenPath( const char *path ) {
 	
 	// If we have a good handle, return it.
 	if (good_open) {
+		libusb_reset_device( dev->device_handle );
 		return dev;
 	} else {
 		// Unable to open any devices.
